@@ -83,6 +83,14 @@ public class CPU {
                 if (C) {
                     IC = IR.getLower().toInt();
                 }
+            } else if (IR.beginsWith("AD")) {
+                int2 low = IR.getLower();
+                int x = M[low.toInt()].toInt();
+                x += R.toInt();
+                R = new int4(x);
+            } else if (IR.beginsWith("JP")) {
+                int2 low = IR.getLower();
+                IC = IR.getLower().toInt();
             } else {
 //                break;
             }
