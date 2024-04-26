@@ -33,6 +33,10 @@ public class int4 {
         return new int2(new String(arr).substring(2));
     }
 
+    public int2 getHigher() {
+        return new int2(new String(arr).substring(0, 2));
+    }
+
     public int toInt() {
         return (arr[0] - '0') * 1000 + (arr[1] - '0') * 100 + (arr[2] - '0') * 10 + (arr[3] - '0');
     }
@@ -49,6 +53,9 @@ public class int4 {
         return sb.toString();
     }
 
+    public boolean isnull() {
+        return (arr[0] == 0) && (arr[1] == 0) && (arr[2] == 0) && (arr[3] == 0);
+    }
 
     public boolean beginsWith(String s) {
         if (s.length() > 4) {
@@ -61,7 +68,8 @@ public class int4 {
         }
         return true;
     }
-    public void printHex(){
-        System.out.printf("%c %c %c %c\n",arr[0],arr[1],arr[2],arr[3]);
+
+    public void printHex() {
+        System.out.printf("%c %c %c %c\n", arr[0], arr[1], arr[2], arr[3]);
     }
 }
